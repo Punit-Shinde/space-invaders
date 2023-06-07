@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+    height: 100vh;
+    background-image: url(.//assets/sibg.jpg);   
+}
+
+
+h1, h3, p {
+    text-shadow: 2px 2px 5px white;
+}
+
+#board {
+    background-image: url(.//assets/space.png);
+    width: 16;
+    height: 16;
+    padding: 15px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.577);
+}
