@@ -20,3 +20,55 @@ h1, h3, p {
     padding: 15px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.577);
 }
+
+/* CSS for control buttons */
+#buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    background-color: #4285F4;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #0D47A1;
+  }
+  
+  button:active {
+    background-color: #002171;
+  }
+  
+  h3 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+/* Style for each control button */
+img {
+    width: 100px; /* Set the width of each button image */
+    height: 100px; /* Set the height of each button image */
+    margin: 10px; /* Set the margin around each button image */
+    cursor: pointer;
+  }
+  
+  /* Example of positioning the buttons differently */
+  #leftButton {
+    order: 1; /* Change the order in the flex container */
+  }
+  
+  #rightButton {
+    order: 2; /* Change the order in the flex container */
+  }
+  
+  #fireButton {
+    order: 3; /* Change the order in the flex container */
+  }

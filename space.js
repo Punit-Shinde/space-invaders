@@ -72,6 +72,17 @@ window.onload = function() {
     requestAnimationFrame(update);
     document.addEventListener("keydown", moveShip);
     document.addEventListener("keyup", shoot);
+    document.getElementById("leftButton").addEventListener("click", function() {
+        moveShipOnScreen("ArrowLeft");
+    });
+    
+    document.getElementById("rightButton").addEventListener("click", function() {
+        moveShipOnScreen("ArrowRight");
+    });
+    
+    document.getElementById("fireButton").addEventListener("click", function() {
+        shootOnScreen();
+    });
 }
 
 
@@ -162,6 +173,41 @@ function update() {
 
 
 
+document.getElementById("fireButton").addEventListener("click", function() {
+    shootOnScreen();
+});
+
+function moveShipOnScreen(direction) {
+    if (gameOver) {
+        return;
+    }
+
+    if (direction === "ArrowLeft" && ship.x - shipVelocityX >= 0) {
+        ship.x -= shipVelocityX; // Move left one tile
+    } else if (direction === "ArrowRight" && ship.x + shipVelocityX + ship.width <= board.width) {
+        ship.x += shipVelocityX; // Move right one tile
+    }
+}
+
+function shootOnScreen() {
+    if (gameOver) {
+        return;
+    }
+
+    // Shoot
+    let bullet = {
+        x: ship.x + shipWidth * 15 / 32,
+        y: ship.y,
+        width: tileSize / 8,
+        height: tileSize / 2,
+        used: false
+    };
+    bulletArray.push(bullet);
+}
+
+// The rest of your existing JavaScript code
+// ...
+
 //respective-funtions
 
 function moveShip(e) {
@@ -218,3 +264,4 @@ function detectCollision(a, b) {
            a.y < b.y + b.height &&  //a's top left corner doesn't reach b's bottom left corner
            a.y + a.height > b.y;    //a's bottom left corner passes b's top left corner
 } 
+
